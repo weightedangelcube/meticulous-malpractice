@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dns3n8xsutrqj"]
+
+[ext_resource type="Script" uid="uid://dtwf7cvjgb16w" path="res://Source/Terminal.cs" id="1_fxrve"]
+[ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_o8ahh"]
+
+[node name="Terminal" type="Node2D"]
+script = ExtResource("1_fxrve")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 488.0
+offset_bottom = 215.0
+theme = ExtResource("1_o8ahh")
+text = "> please wait... now loading daydream-game."

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://boxo2g77bue4s"]
+
+[ext_resource type="FontFile" uid="uid://xsrq6m0qyix4" path="res://Assets/Fonts/GoogleSansCode.ttf" id="1_hbvho"]
+
+[resource]
+RichTextLabel/fonts/mono_font = ExtResource("1_hbvho")
+RichTextLabel/fonts/normal_font = ExtResource("1_hbvho")

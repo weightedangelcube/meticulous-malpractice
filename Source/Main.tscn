@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://8o3x8aqnvydp"]
+
+[ext_resource type="PackedScene" uid="uid://dns3n8xsutrqj" path="res://Source/Terminal.tscn" id="1_4gxt3"]
+[ext_resource type="Script" uid="uid://bmpl34nk26nov" path="res://Source/Main.cs" id="1_hk4rc"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_hk4rc")
+
+[node name="Terminal" parent="." instance=ExtResource("1_4gxt3")]
+position = Vector2(108, 74)
