@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://rf46u3uva26l"]
+
+[ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_oloig"]
+
+[node name="Handbook" type="Node"]
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_right = 581.0
+offset_bottom = 416.0
+theme = ExtResource("1_oloig")
+bbcode_enabled = true
+text = "[font_size=24][b]Blood and you![/b][/font_size]
+[i](It's a lot more than red.)[/i]
+Red, green, and even blue, blood of all colours are all around you! In this business, you'll be working with blood in a variety of ways. Whether or not it's adding chemicals or separating it with a centrifuge, you will have to work closely with the essence of life. In the fridge off to your right (or your left, if the building is flipped upside down), you will have access to our blood samples and the chemicals we'll use to work with it! 
+[i](Be sure not to use too much of it up, we only have a limited amount to pass around every day...)[/i]
+But otherwise, stay safe, stay on task, and use our blood!"

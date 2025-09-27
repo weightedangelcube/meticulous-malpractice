@@ -1,23 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://dns3n8xsutrqj"]
+[gd_scene load_steps=5 format=3 uid="uid://dns3n8xsutrqj"]
 
 [ext_resource type="Script" uid="uid://dtwf7cvjgb16w" path="res://Source/Terminal.cs" id="1_fxrve"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_o8ahh"]
-[ext_resource type="Script" uid="uid://bs3a5pogf5eek" path="res://Source/TerminalTextLabel.cs" id="3_b8k61"]
+[ext_resource type="Texture2D" uid="uid://cpbuimyql0b1n" path="res://Assets/Graphics/terminal.png" id="2_l06sl"]
+[ext_resource type="Script" path="res://Source/TerminalText.cs" id="4_l06sl"]
 
 [node name="Terminal" type="Node2D"]
 script = ExtResource("1_fxrve")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(513, 10)
+texture = ExtResource("2_l06sl")
 
-[node name="TerminalText" type="Label" parent="."]
-offset_right = 488.0
-offset_bottom = 215.0
+[node name="Text" type="Label" parent="."]
+clip_contents = true
+offset_left = 105.0
+offset_top = 59.0
+offset_right = 425.0
+offset_bottom = 274.0
+size_flags_vertical = 1
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
 theme = ExtResource("1_o8ahh")
 text = "> please wait... now loading daydream-game."
-script = ExtResource("3_b8k61")
+autowrap_mode = 3
+script = ExtResource("4_l06sl")
 metadata/_custom_type_script = "uid://bs3a5pogf5eek"
 
-[node name="WriteCooldown" type="Timer" parent="TerminalText"]
+[node name="WriteCooldown" type="Timer" parent="Text"]
 wait_time = 0.1
-
-[connection signal="timeout" from="TerminalText/WriteCooldown" to="TerminalText" method="onWriteCooldownTimeout"]

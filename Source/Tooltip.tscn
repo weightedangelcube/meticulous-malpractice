@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://gt0cdfccihvf"]
+
+[ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_0rlhl"]
+
+[node name="Tooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 317.0
+offset_bottom = 35.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("1_0rlhl")
+text = "Press [ESC] to exit computer."

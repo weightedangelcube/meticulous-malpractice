@@ -1,6 +1,7 @@
-using Godot;
-using System;
 using daydream.Utils.Exceptions;
+using Godot;
+
+namespace daydream;
 
 public partial class Main : Node {
 	private Terminal _terminal;
@@ -16,6 +17,10 @@ public partial class Main : Node {
 		InitGame();
 	}
 
+	public override void _Input(InputEvent @event) {
+		
+	}
+
 	public void InitGame() {
 		_terminal.Clear();
 		_terminal.WriteLine("> Welcome to Nefarious Corporation.");
@@ -23,5 +28,9 @@ public partial class Main : Node {
 		_terminal.WriteLine("> Password: *********");
 		_terminal.WriteLine("> Authorized.");
 		_terminal.WriteLine("> Directive: blah blah blah blah");
+		
+		// play intro audio
+		
+		
 	}
 }

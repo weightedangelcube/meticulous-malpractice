@@ -4,6 +4,7 @@ namespace daydream;
 
 [GlobalClass]
 public partial class TerminalTextLabel : Label {
+
     public void Clear() {
         Text = "";
     }
