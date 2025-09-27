@@ -23,8 +23,9 @@ focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 1
 theme = ExtResource("1_o8ahh")
-text = "> please wait... now loading daydream-game."
-autowrap_mode = 3
+text = "> please wait... now loading 
+meticulous-malpractice.game..."
+autowrap_mode = 1
 text_overrun_behavior = 2
 script = ExtResource("3_b8k61")
 metadata/_custom_type_script = "uid://bs3a5pogf5eek"

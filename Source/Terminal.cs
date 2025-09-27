@@ -32,12 +32,19 @@ public partial class Terminal : Node {
 	}
 	
 	public override void _Process(double delta) {
-		
+		if (_text.GetThemeDefaultFont().GetMultilineStringSize(_text.Text).Y > _text.Size.Y) {
+			_text.Text = _text.Text[(_text.Text.IndexOf("\n") + 1)..];
+		}
 	}
 
 	public void OnInputSubmitted(string input) {
 		_text.WriteLine("> " + input);
 		_typeable.Clear();
-		
+
+		switch (input) {
+			case "clear":
+				Clear();
+				break;
+		}
 	}
 }
