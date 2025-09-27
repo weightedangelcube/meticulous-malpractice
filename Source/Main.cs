@@ -6,19 +6,15 @@ namespace daydream;
 public partial class Main : Node {
 	private Terminal _terminal;
 	public override void _Ready() {
-		foreach (var child in GetChildren()) {
-			if (child.Name == "Terminal") {
-				_terminal = child as Terminal;
-			}
-		}
+		_terminal = GetNode("Terminal") as Terminal;
+
 		// check if terminal has been initialized
-		if (_terminal == null) throw new MalformedSceneTreeException("Terminal Node doesn't exist!");
 		
 		InitGame();
 	}
 
-	public override void _Input(InputEvent @event) {
-		
+	public override void _Process(double delta) {
+		_terminal.Focus();
 	}
 
 	public void InitGame() {

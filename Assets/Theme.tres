@@ -1,7 +1,18 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://boxo2g77bue4s"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://boxo2g77bue4s"]
 
 [ext_resource type="FontFile" uid="uid://xsrq6m0qyix4" path="res://Assets/Fonts/GoogleSansCode.ttf" id="1_xcxgj"]
 [ext_resource type="FontFile" uid="uid://bm8k3sob2smqv" path="res://Assets/Fonts/GoogleSansCodeItalic.ttf" id="2_csnxt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csnxt"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dt5f"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wf4d"]
+bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="FontVariation" id="FontVariation_xcxgj"]
 base_font = ExtResource("1_xcxgj")
@@ -10,7 +21,11 @@ variation_opentype = {
 }
 
 [resource]
+Control/colors/background_color = Color(0, 0, 0, 0)
 Control/fonts/font = ExtResource("1_xcxgj")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_csnxt")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_8dt5f")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_5wf4d")
 RichTextLabel/fonts/bold_font = SubResource("FontVariation_xcxgj")
 RichTextLabel/fonts/italics_font = ExtResource("2_csnxt")
 RichTextLabel/fonts/normal_font = ExtResource("1_xcxgj")

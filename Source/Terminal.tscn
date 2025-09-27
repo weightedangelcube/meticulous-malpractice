@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dtwf7cvjgb16w" path="res://Source/Terminal.cs" id="1_fxrve"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_o8ahh"]
 [ext_resource type="Texture2D" uid="uid://cpbuimyql0b1n" path="res://Assets/Graphics/terminal.png" id="2_l06sl"]
-[ext_resource type="Script" path="res://Source/TerminalText.cs" id="4_l06sl"]
+[ext_resource type="Script" uid="uid://bs3a5pogf5eek" path="res://Source/TerminalTextLabel.cs" id="3_b8k61"]
 
 [node name="Terminal" type="Node2D"]
 script = ExtResource("1_fxrve")
@@ -12,7 +12,7 @@ script = ExtResource("1_fxrve")
 position = Vector2(513, 10)
 texture = ExtResource("2_l06sl")
 
-[node name="Text" type="Label" parent="."]
+[node name="TerminalText" type="Label" parent="."]
 clip_contents = true
 offset_left = 105.0
 offset_top = 59.0
@@ -25,8 +25,19 @@ mouse_default_cursor_shape = 1
 theme = ExtResource("1_o8ahh")
 text = "> please wait... now loading daydream-game."
 autowrap_mode = 3
-script = ExtResource("4_l06sl")
+text_overrun_behavior = 2
+script = ExtResource("3_b8k61")
 metadata/_custom_type_script = "uid://bs3a5pogf5eek"
 
-[node name="WriteCooldown" type="Timer" parent="Text"]
+[node name="WriteCooldown" type="Timer" parent="TerminalText"]
 wait_time = 0.1
+
+[node name="TerminalTypeable" type="LineEdit" parent="."]
+offset_left = 105.0
+offset_top = 297.0
+offset_right = 428.0
+offset_bottom = 330.0
+theme = ExtResource("1_o8ahh")
+keep_editing_on_text_submit = true
+
+[connection signal="text_submitted" from="TerminalTypeable" to="." method="OnInputSubmitted"]
