@@ -4,4 +4,8 @@ root = true
 charset = utf-8
 
 [*.cs]
-brace_style=end_of_line
+brace_style = end_of_line
+new_line_before_catch = false
+new_line_before_else = false
+new_line_before_finally = false
+new_line_before_while = false
