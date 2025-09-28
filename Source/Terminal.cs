@@ -24,6 +24,8 @@ public partial class Terminal : Node {
 		_typeable.Clear();
 
 		switch (input.Trim()) {
+			case "":
+				break;
 			case "clear":
 				Clear();
 				break;
