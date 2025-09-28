@@ -40,4 +40,5 @@ offset_right = 945.0
 offset_bottom = 913.0
 theme = ExtResource("4_fwvfq")
 
+[connection signal="pressed" from="FridgeSprite/Button" to="." method="OnFridgePressed"]
 [connection signal="pressed" from="TerminalSprite/Button" to="." method="OnTerminalPressed"]

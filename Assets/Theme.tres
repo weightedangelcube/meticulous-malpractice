@@ -1,9 +1,20 @@
 [gd_resource type="Theme" load_steps=10 format=3 uid="uid://boxo2g77bue4s"]
 
-[ext_resource type="StyleBox" uid="uid://djo1vwbt6qeed" path="res://Assets/Graphics/SceneImageHoverStyle.tres" id="1_5wf4d"]
 [ext_resource type="FontFile" uid="uid://xsrq6m0qyix4" path="res://Assets/Fonts/GoogleSansCode.ttf" id="1_xcxgj"]
 [ext_resource type="FontFile" uid="uid://bm8k3sob2smqv" path="res://Assets/Fonts/GoogleSansCodeItalic.ttf" id="2_csnxt"]
 [ext_resource type="StyleBox" uid="uid://o42su7qv584k" path="res://Assets/Graphics/HiddenStyle.tres" id="2_ygdo5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygdo5"]
+bg_color = Color(0.525, 0.612, 0.471, 0.4)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.364706, 0.443137, 0.305882, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aflf5"]
 bg_color = Color(0, 0, 0, 0)
@@ -26,7 +37,7 @@ variation_opentype = {
 }
 
 [resource]
-Button/styles/hover = ExtResource("1_5wf4d")
+Button/styles/hover = SubResource("StyleBoxFlat_ygdo5")
 Button/styles/normal = ExtResource("2_ygdo5")
 Button/styles/pressed = SubResource("StyleBoxFlat_aflf5")
 Control/colors/background_color = Color(0, 0, 0, 0)

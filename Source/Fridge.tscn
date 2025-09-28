@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cutt57g87ta7f"]
+
+[ext_resource type="Script" uid="uid://dxr4c1fxrkdfb" path="res://Source/Fridge.cs" id="1_7pkv6"]
+[ext_resource type="Texture2D" uid="uid://eaoak3kgss3v" path="res://Assets/Graphics/fridge.png" id="1_tgw3y"]
+[ext_resource type="Texture2D" uid="uid://b7dod2rsefgkn" path="res://Assets/Graphics/fridge-top-open.png" id="2_7pkv6"]
+[ext_resource type="Texture2D" uid="uid://8vqujxtj8gtu" path="res://Assets/Graphics/fridge-bottom-open.png" id="3_gt6pj"]
+
+[node name="Fridge" type="Node2D"]
+script = ExtResource("1_7pkv6")
+
+[node name="FridgeSprite" type="Sprite2D" parent="."]
+position = Vector2(-169.4, 231)
+scale = Vector2(0.92875, 0.818982)
+texture = ExtResource("1_tgw3y")
+
+[node name="FridgeTopOpenButton" type="Button" parent="."]
+offset_left = 307.0
+offset_top = 4.0
+offset_right = 685.0
+offset_bottom = 319.0
+
+[node name="FridgeTopOpenSprite" type="Sprite2D" parent="FridgeTopOpenButton"]
+visible = false
+position = Vector2(-476.449, 226.858)
+scale = Vector2(0.92875, 0.818982)
+texture = ExtResource("2_7pkv6")
+
+[node name="FridgeBottomOpenButton" type="Button" parent="."]
+offset_left = 307.0
+offset_top = 320.0
+offset_right = 685.0
+offset_bottom = 642.0
+
+[node name="FridgeBottomOpenSprite" type="Sprite2D" parent="FridgeBottomOpenButton"]
+visible = false
+position = Vector2(-476.449, -88)
+scale = Vector2(0.929, 0.819)
+texture = ExtResource("3_gt6pj")
+
+[connection signal="pressed" from="FridgeTopOpenButton" to="." method="FridgeTopPressed"]
+[connection signal="pressed" from="FridgeBottomOpenButton" to="." method="FridgeBottomPressed"]

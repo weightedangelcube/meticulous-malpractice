@@ -31,7 +31,7 @@ public partial class Terminal : Node {
 			
 			case "haha annie try this lol 123":
 				WriteLine("meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow" +
-				          "meow meow ");
+						  " meow meow ");
 				break;
 			default:
 				WriteLine("Command not found");
