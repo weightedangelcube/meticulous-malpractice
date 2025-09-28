@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5gbqcmsfautf"]
+
+[ext_resource type="PackedScene" uid="uid://dns3n8xsutrqj" path="res://Source/Terminal.tscn" id="1_g03re"]
+[ext_resource type="Script" uid="uid://cg3dr6dbldygr" path="res://Source/TerminalScene.cs" id="1_osrwy"]
+
+[node name="TerminalScene" type="Node"]
+script = ExtResource("1_osrwy")
+
+[node name="Terminal" parent="." instance=ExtResource("1_g03re")]
+position = Vector2(290, 130)

@@ -18,6 +18,26 @@ public partial class Terminal : Node {
 		// _tween = GetTree().CreateTween();
 		// _tween.TweenProperty(_text, "visible_characters", _text.GetTotalCharacterCount(), TerminalCharacterTimeout);
 	}
+	
+	public void OnInputSubmitted(string input) {
+		WriteLine("> " + input);
+		_typeable.Clear();
+
+		switch (input) {
+			case "clear":
+				Clear();
+				break;
+			
+			
+			case "haha annie try this lol 123":
+				WriteLine("meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow" +
+				          "meow meow ");
+				break;
+			default:
+				WriteLine("Command not found");
+				break;
+		}
+	}
 
 	public void WriteLine(string text) {
 		_text.WriteLine(text);
@@ -33,18 +53,7 @@ public partial class Terminal : Node {
 	
 	public override void _Process(double delta) {
 		if (_text.GetThemeDefaultFont().GetMultilineStringSize(_text.Text).Y > _text.Size.Y) {
-			_text.Text = _text.Text[(_text.Text.IndexOf("\n") + 1)..];
-		}
-	}
-
-	public void OnInputSubmitted(string input) {
-		_text.WriteLine("> " + input);
-		_typeable.Clear();
-
-		switch (input) {
-			case "clear":
-				Clear();
-				break;
+			_text.Text = _text.Text[(_text.Text.IndexOf('\n') + 1)..];
 		}
 	}
 }

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://8o3x8aqnvydp"]
+
+[ext_resource type="Script" uid="uid://bmpl34nk26nov" path="res://Source/Main.cs" id="1_nhjqj"]
+[ext_resource type="Texture2D" uid="uid://eaoak3kgss3v" path="res://Assets/Graphics/fridge.png" id="3_fo45p"]
+[ext_resource type="PackedScene" uid="uid://gt0cdfccihvf" path="res://Source/Tooltip.tscn" id="3_fwvfq"]
+[ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="4_fwvfq"]
+[ext_resource type="Texture2D" uid="uid://cpbuimyql0b1n" path="res://Assets/Graphics/terminal.png" id="5_fwvfq"]
+
+[node name="MainScene" type="Node"]
+script = ExtResource("1_nhjqj")
+
+[node name="Tooltip" parent="." instance=ExtResource("3_fwvfq")]
+visible = false
+offset_left = 373.0
+offset_top = 535.0
+offset_right = 373.0
+offset_bottom = 535.0
+
+[node name="FridgeSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_fo45p")
+centered = false
+
+[node name="Button" type="Button" parent="FridgeSprite"]
+offset_left = 1467.0
+offset_top = 257.0
+offset_right = 1882.0
+offset_bottom = 1042.0
+theme = ExtResource("4_fwvfq")
+
+[node name="TerminalSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_fwvfq")
+centered = false
+
+[node name="Button" type="Button" parent="TerminalSprite"]
+offset_left = 490.0
+offset_top = 535.0
+offset_right = 945.0
+offset_bottom = 913.0
+theme = ExtResource("4_fwvfq")
+
+[connection signal="pressed" from="TerminalSprite/Button" to="." method="OnTerminalPressed"]
