@@ -1,13 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://8o3x8aqnvydp"]
+[gd_scene load_steps=9 format=3 uid="uid://8o3x8aqnvydp"]
 
 [ext_resource type="Script" uid="uid://bmpl34nk26nov" path="res://Source/Main.cs" id="1_nhjqj"]
+[ext_resource type="Texture2D" uid="uid://d1yqkxfmp18im" path="res://Assets/Graphics/background.png" id="2_khx7i"]
 [ext_resource type="Texture2D" uid="uid://eaoak3kgss3v" path="res://Assets/Graphics/fridge.png" id="3_fo45p"]
 [ext_resource type="PackedScene" uid="uid://gt0cdfccihvf" path="res://Source/Tooltip.tscn" id="3_fwvfq"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="4_fwvfq"]
+[ext_resource type="Texture2D" uid="uid://c2je08mueb85x" path="res://Assets/Graphics/centrifuge.png" id="4_jr7fy"]
 [ext_resource type="Texture2D" uid="uid://cpbuimyql0b1n" path="res://Assets/Graphics/terminal.png" id="5_fwvfq"]
+[ext_resource type="Texture2D" uid="uid://lqkk4jv5ihyl" path="res://Assets/Graphics/tuberack.png" id="5_hp24q"]
 
 [node name="MainScene" type="Node"]
 script = ExtResource("1_nhjqj")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_khx7i")
+centered = false
 
 [node name="Tooltip" parent="." instance=ExtResource("3_fwvfq")]
 visible = false
@@ -15,6 +23,16 @@ offset_left = 373.0
 offset_top = 535.0
 offset_right = 373.0
 offset_bottom = 535.0
+
+[node name="CentrifugeSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_jr7fy")
+centered = false
+
+[node name="TubeRackSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_hp24q")
+centered = false
 
 [node name="FridgeSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -36,7 +54,7 @@ centered = false
 [node name="Button" type="Button" parent="TerminalSprite"]
 offset_left = 490.0
 offset_top = 535.0
-offset_right = 945.0
+offset_right = 942.0
 offset_bottom = 913.0
 theme = ExtResource("4_fwvfq")
 

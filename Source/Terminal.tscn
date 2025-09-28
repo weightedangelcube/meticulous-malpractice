@@ -2,22 +2,23 @@
 
 [ext_resource type="Script" uid="uid://dtwf7cvjgb16w" path="res://Source/Terminal.cs" id="1_fxrve"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_o8ahh"]
-[ext_resource type="Texture2D" uid="uid://cpbuimyql0b1n" path="res://Assets/Graphics/terminal.png" id="2_l06sl"]
+[ext_resource type="Texture2D" uid="uid://b40t3s06sma14" path="res://Assets/Graphics/terminal-zoom.png" id="2_l06sl"]
 [ext_resource type="Script" uid="uid://bs3a5pogf5eek" path="res://Source/TerminalTextLabel.cs" id="3_b8k61"]
 
 [node name="Terminal" type="Node2D"]
 script = ExtResource("1_fxrve")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(513, 10)
+[node name="TerminalZoomSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_l06sl")
+centered = false
 
 [node name="TerminalText" type="Label" parent="."]
 clip_contents = true
-offset_left = 105.0
-offset_top = 59.0
-offset_right = 425.0
-offset_bottom = 274.0
+offset_left = 145.0
+offset_top = 87.0
+offset_right = 649.0
+offset_bottom = 450.0
 size_flags_vertical = 1
 focus_mode = 2
 mouse_filter = 0
@@ -34,10 +35,10 @@ metadata/_custom_type_script = "uid://bs3a5pogf5eek"
 wait_time = 0.1
 
 [node name="TerminalTypeable" type="LineEdit" parent="."]
-offset_left = 105.0
-offset_top = 297.0
-offset_right = 428.0
-offset_bottom = 330.0
+offset_left = 145.0
+offset_top = 449.0
+offset_right = 649.0
+offset_bottom = 482.0
 theme = ExtResource("1_o8ahh")
 keep_editing_on_text_submit = true
 

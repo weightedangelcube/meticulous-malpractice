@@ -23,11 +23,13 @@ public partial class Terminal : Node {
 		WriteLine("> " + input);
 		_typeable.Clear();
 
-		switch (input) {
+		switch (input.Trim()) {
 			case "clear":
 				Clear();
 				break;
-			
+			case "analyze cellsample":
+				// WriteLine(new BloodSample(true).GetCellSequence());
+				break;
 			
 			case "haha annie try this lol 123":
 				WriteLine("meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow" +
