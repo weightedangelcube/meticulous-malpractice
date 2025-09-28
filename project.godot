@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Autoload="*res://Source/Autoload.cs"
+Menu="*res://Source/Autoloads/Menu.cs"
 
 [display]
 
