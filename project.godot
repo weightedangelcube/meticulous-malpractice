@@ -22,6 +22,8 @@ Menu="*res://Source/Autoloads/Menu.cs"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 display_server/driver.linuxbsd="wayland"
 
 [dotnet]

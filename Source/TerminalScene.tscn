@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5gbqcmsfautf"]
+[gd_scene load_steps=5 format=3 uid="uid://c5gbqcmsfautf"]
 
 [ext_resource type="PackedScene" uid="uid://dns3n8xsutrqj" path="res://Source/Terminal.tscn" id="1_g03re"]
 [ext_resource type="Script" uid="uid://cg3dr6dbldygr" path="res://Source/TerminalScene.cs" id="1_osrwy"]
 [ext_resource type="Texture2D" uid="uid://d1yqkxfmp18im" path="res://Assets/Graphics/background.png" id="2_gksir"]
+[ext_resource type="PackedScene" uid="uid://rf46u3uva26l" path="res://Source/Handbook.tscn" id="4_b0tb4"]
 
 [node name="TerminalScene" type="Node"]
 script = ExtResource("1_osrwy")
@@ -13,3 +14,9 @@ texture = ExtResource("2_gksir")
 centered = false
 
 [node name="Terminal" parent="." instance=ExtResource("1_g03re")]
+
+[node name="Handbook" parent="." instance=ExtResource("4_b0tb4")]
+offset_left = 811.0
+offset_top = 196.0
+offset_right = 1190.0
+offset_bottom = 630.0

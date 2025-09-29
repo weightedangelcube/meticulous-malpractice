@@ -1,16 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://rf46u3uva26l"]
+[gd_scene load_steps=4 format=3 uid="uid://rf46u3uva26l"]
 
-[ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_oloig"]
+[ext_resource type="Script" uid="uid://d0f6h44vt37gf" path="res://Source/Handbook.cs" id="1_84lmm"]
+[ext_resource type="Texture2D" uid="uid://bdsitkrfco5cw" path="res://Assets/Graphics/handbook.png" id="1_oloig"]
+[ext_resource type="Theme" uid="uid://ccfxwsuflowa" path="res://Assets/Styles/Theme.tres" id="2_u8m6f"]
 
-[node name="Handbook" type="Node"]
+[node name="Handbook" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 379.0
+offset_bottom = 434.0
+script = ExtResource("1_84lmm")
 
-[node name="Label" type="RichTextLabel" parent="."]
-offset_right = 581.0
-offset_bottom = 416.0
-theme = ExtResource("1_oloig")
+[node name="HandbookSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_oloig")
+centered = false
+
+[node name="HandbookBack" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = -1.0
+offset_right = 124.0
+offset_bottom = 26.0
+theme = ExtResource("2_u8m6f")
+theme_type_variation = &"ButtonFlatCorners"
+
+[node name="HandbookForward" type="Button" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = -1.0
+offset_right = 333.0
+offset_bottom = 25.0
+theme = ExtResource("2_u8m6f")
+theme_type_variation = &"ButtonFlatCorners"
+
+[node name="HandbookLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 66.0
+offset_right = 319.0
+offset_bottom = 376.0
+theme = ExtResource("2_u8m6f")
 bbcode_enabled = true
-text = "[font_size=24][b]Blood and you![/b][/font_size]
-[i](It's a lot more than red.)[/i]
-Red, green, and even blue, blood of all colours are all around you! In this business, you'll be working with blood in a variety of ways. Whether or not it's adding chemicals or separating it with a centrifuge, you will have to work closely with the essence of life. In the fridge off to your right (or your left, if the building is flipped upside down), you will have access to our blood samples and the chemicals we'll use to work with it! 
-[i](Be sure not to use too much of it up, we only have a limited amount to pass around every day...)[/i]
-But otherwise, stay safe, stay on task, and use our blood!"
+text = "meow meow meow handbook"
+autowrap_mode = 2
+tab_size = 0
+
+[connection signal="pressed" from="HandbookBack" to="." method="OnBackwardPress"]
+[connection signal="pressed" from="HandbookForward" to="." method="OnForwardPress"]

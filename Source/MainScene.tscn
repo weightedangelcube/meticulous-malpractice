@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://8o3x8aqnvydp"]
+[gd_scene load_steps=10 format=3 uid="uid://8o3x8aqnvydp"]
 
 [ext_resource type="Script" uid="uid://bmpl34nk26nov" path="res://Source/Main.cs" id="1_nhjqj"]
 [ext_resource type="Texture2D" uid="uid://d1yqkxfmp18im" path="res://Assets/Graphics/background.png" id="2_khx7i"]
-[ext_resource type="Texture2D" uid="uid://eaoak3kgss3v" path="res://Assets/Graphics/fridge.png" id="3_fo45p"]
 [ext_resource type="PackedScene" uid="uid://gt0cdfccihvf" path="res://Source/Tooltip.tscn" id="3_fwvfq"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="4_fwvfq"]
 [ext_resource type="Texture2D" uid="uid://c2je08mueb85x" path="res://Assets/Graphics/centrifuge.png" id="4_jr7fy"]
+[ext_resource type="PackedScene" uid="uid://cutt57g87ta7f" path="res://Source/Fridge.tscn" id="5_fgaa0"]
 [ext_resource type="Texture2D" uid="uid://cpbuimyql0b1n" path="res://Assets/Graphics/terminal.png" id="5_fwvfq"]
 [ext_resource type="Texture2D" uid="uid://lqkk4jv5ihyl" path="res://Assets/Graphics/tuberack.png" id="5_hp24q"]
+[ext_resource type="PackedScene" uid="uid://cebq73prxruxv" path="res://Source/TestTube.tscn" id="9_fgaa0"]
 
 [node name="MainScene" type="Node"]
 script = ExtResource("1_nhjqj")
@@ -34,17 +35,11 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_hp24q")
 centered = false
 
-[node name="FridgeSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_fo45p")
-centered = false
-
-[node name="Button" type="Button" parent="FridgeSprite"]
-offset_left = 1467.0
-offset_top = 257.0
-offset_right = 1882.0
-offset_bottom = 1042.0
-theme = ExtResource("4_fwvfq")
+[node name="TestTube" parent="." instance=ExtResource("9_fgaa0")]
+offset_left = 580.0
+offset_top = 325.0
+offset_right = 606.0
+offset_bottom = 441.0
 
 [node name="TerminalSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -58,5 +53,6 @@ offset_right = 942.0
 offset_bottom = 913.0
 theme = ExtResource("4_fwvfq")
 
-[connection signal="pressed" from="FridgeSprite/Button" to="." method="OnFridgePressed"]
+[node name="Fridge" parent="." instance=ExtResource("5_fgaa0")]
+
 [connection signal="pressed" from="TerminalSprite/Button" to="." method="OnTerminalPressed"]

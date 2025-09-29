@@ -7,8 +7,22 @@ public partial class Fridge : Node2D {
 		sprite.Visible = !sprite.Visible;
 	}
 
-	private void FridgeBottomPressed() {
+	private void FridgeBottomOpened() {
 		var sprite = GetNode("FridgeBottomOpenSprite") as Sprite2D;
-		sprite.Visible = !sprite.Visible;
+		sprite.Visible = true;
+		var openButton = GetNode("FridgeBottomOpenButton") as Button;
+		var closeButton = GetNode("FridgeBottomCloseButton") as Button;
+		openButton.Visible = false;
+		closeButton.Visible = true;
+		
+	}
+
+	private void FridgeBottomClosed() {
+		var sprite = GetNode("FridgeBottomOpenSprite") as Sprite2D;
+		sprite.Visible = false;
+		var openButton = GetNode("FridgeBottomOpenButton") as Button;
+		var closeButton = GetNode("FridgeBottomCloseButton") as Button;
+		openButton.Visible = true;
+		closeButton.Visible = false;
 	}
 }

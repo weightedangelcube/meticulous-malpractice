@@ -3,16 +3,31 @@ using System;
 namespace daydream;
 
 public class BloodSample {
-    public BloodSample(bool infected) {
+    public bool infected { get; }
+    public int subjectIndex { get; }
+    public AvailableSamples availableSamples { get; }
+    public string CellSequence { get; }
+    public int OxygenResponse { get; }
+    public int WhiteBloodCellCount { get; }
+
+    public BloodSample(bool infected, int subjectIndex, AvailableSamples availableSamples) {
         this.infected = infected;
+        this.subjectIndex = subjectIndex;
+        this.availableSamples = availableSamples;
+        CellSequence = GetCellSequence();
+        OxygenResponse = GetOxygenResponse();
+        WhiteBloodCellCount = GetWhiteBloodCellCount();
     }
 
-    private bool infected { get; }
-    private string CellSequence => GetCellSequence();
-    private int OxygenResponse => GetOxygenResponse();
-    private int WhiteBloodCellCount => GetWhiteBloodCellCount();
-
-    public string GetCellSequence() {
+    [Flags]
+    public enum AvailableSamples {
+        Cell = 1,
+        Oxygen = 2,
+        WhiteBloodCell = 4
+    }
+    
+    private string GetCellSequence() {
+        
         var sequence = "";
         
         if (infected) {
@@ -48,18 +63,18 @@ public class BloodSample {
         return sequence;
     }
 
-    public int GetOxygenResponse() {
+    private int GetOxygenResponse() {
         if (infected) {
-            return new Random().Next(1) >= 0.5 ? // coin flip
+            return new Random().Next(2) == 1 ? // coin flip
                 new Random().Next(25, 70) : new Random().Next(105, 150);
         } else {
             return new Random().Next(70, 105);
         }
     }
 
-    public int GetWhiteBloodCellCount() {
+    private int GetWhiteBloodCellCount() {
         if (infected) {
-            return new Random().Next(1) >= 0.5 ? // coin flip
+            return new Random().Next(2) == 1 ? // coin flip
                 new Random().Next(0, 5000) : new Random().Next(10000, 15000);
         } else {
             return new Random().Next(5000, 10000);

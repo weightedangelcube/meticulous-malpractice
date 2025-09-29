@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cebq73prxruxv"]
+
+[ext_resource type="Texture2D" uid="uid://c8bk5hsngc584" path="res://Assets/Graphics/testtube.png" id="1_ewvy5"]
+[ext_resource type="Script" uid="uid://kvipobvoxfld" path="res://Source/TestTube.cs" id="1_uw7c6"]
+
+[node name="TestTube" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 26.0
+offset_bottom = 116.0
+script = ExtResource("1_uw7c6")
+metadata/_custom_type_script = "uid://kvipobvoxfld"
+
+[node name="TestTubeSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_ewvy5")
+centered = false
+
+[connection signal="gui_input" from="." to="." method="OnInput"]

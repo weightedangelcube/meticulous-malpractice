@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ccfxwsuflowa"]
+
+[ext_resource type="StyleBox" uid="uid://bj8vtkqbxwpgc" path="res://Assets/Styles/ButtonFlatCorners.tres" id="1_5qecu"]
+[ext_resource type="StyleBox" uid="uid://o42su7qv584k" path="res://Assets/Graphics/HiddenStyle.tres" id="2_wvah3"]
+[ext_resource type="FontFile" uid="uid://xsrq6m0qyix4" path="res://Assets/Fonts/GoogleSansCode.ttf" id="3_wvah3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvah3"]
+
+[sub_resource type="FontVariation" id="FontVariation_wvah3"]
+base_font = ExtResource("3_wvah3")
+variation_opentype = {
+2003265652: 700
+}
+
+[resource]
+ButtonFlatCorners/base_type = &"Button"
+ButtonFlatCorners/styles/hover = ExtResource("1_5qecu")
+ButtonFlatCorners/styles/normal = ExtResource("2_wvah3")
+ButtonFlatCorners/styles/pressed = ExtResource("1_5qecu")
+ButtonRoundCorners/base_type = &"Button"
+ButtonRoundCorners/styles/normal = SubResource("StyleBoxFlat_wvah3")
+ButtonStraightCorners/base_type = &"Button"
+ButtonStraightCorners/styles/hover = ExtResource("2_wvah3")
+ButtonStraightCorners/styles/normal = ExtResource("2_wvah3")
+Control/fonts/bold_font = SubResource("FontVariation_wvah3")
+Control/fonts/normal_font = ExtResource("3_wvah3")
+RichTextLabel/colors/default_color = Color(0.113725, 0.133333, 0.211765, 1)
+RichTextLabel/font_sizes/bold_font_size = 14
+RichTextLabel/font_sizes/normal_font_size = 14

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dns3n8xsutrqj"]
+[gd_scene load_steps=6 format=3 uid="uid://dns3n8xsutrqj"]
 
 [ext_resource type="Script" uid="uid://dtwf7cvjgb16w" path="res://Source/Terminal.cs" id="1_fxrve"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="1_o8ahh"]
 [ext_resource type="Texture2D" uid="uid://b40t3s06sma14" path="res://Assets/Graphics/terminal-zoom.png" id="2_l06sl"]
 [ext_resource type="Script" uid="uid://bs3a5pogf5eek" path="res://Source/TerminalTextLabel.cs" id="3_b8k61"]
+[ext_resource type="Theme" uid="uid://ccfxwsuflowa" path="res://Assets/Styles/Theme.tres" id="5_oguy3"]
 
 [node name="Terminal" type="Node2D"]
 script = ExtResource("1_fxrve")
@@ -39,7 +40,8 @@ offset_left = 145.0
 offset_top = 449.0
 offset_right = 649.0
 offset_bottom = 482.0
-theme = ExtResource("1_o8ahh")
+theme = ExtResource("5_oguy3")
 keep_editing_on_text_submit = true
 
+[connection signal="gui_input" from="TerminalTypeable" to="." method="OnUnhandledInput"]
 [connection signal="text_submitted" from="TerminalTypeable" to="." method="OnInputSubmitted"]
