@@ -70,6 +70,8 @@ public partial class Terminal : Node {
 				WriteLine("No command supplied, can't guess what you mean.");
 				break;
 			case "mark healthy":
+				GD.Print(currentSample.infected);
+
 				if (!nextSubject(false)) {
 					break;
 				}
@@ -77,6 +79,7 @@ public partial class Terminal : Node {
 				WriteLine("Next subject: ID " + Main.currentIndex);
 				break;
 			case "mark infected":
+				GD.Print(currentSample.infected);
 				if (!nextSubject(true)) {
 					break;
 				}
@@ -120,13 +123,13 @@ public partial class Terminal : Node {
 	}
 	
 	public void winGame() {
-		if ((Main.correctAnswers / Main.samples.Length) >= 0.5) {
+		if (((double) Main.correctAnswers / (double) Main.samples.Length) >= 0.5) {
 			WriteLine("You win!");
-			WriteLine("Percentage correct: " + (Main.correctAnswers / Main.samples.Length) * 100);
+			WriteLine("Percentage correct: " + ((double) Main.correctAnswers / (double) Main.samples.Length) * 100 + "%");
 			WriteLine("(Good ending)");
 		} else {
 			WriteLine("Your contract with the company has been terminated!");
-			WriteLine("Percentage correct: " + (Main.correctAnswers / Main.samples.Length) * 100);
+			WriteLine("Percentage correct: " + ((double) Main.correctAnswers / (double) Main.samples.Length) * 100 + "%");
 			WriteLine("(Bad ending)");
 		}
 	}

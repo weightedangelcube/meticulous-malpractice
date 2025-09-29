@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cutt57g87ta7f"]
+[gd_scene load_steps=10 format=3 uid="uid://cutt57g87ta7f"]
 
 [ext_resource type="Script" uid="uid://dxr4c1fxrkdfb" path="res://Source/Fridge.cs" id="1_7pkv6"]
 [ext_resource type="Texture2D" uid="uid://eaoak3kgss3v" path="res://Assets/Graphics/fridge.png" id="1_tgw3y"]
 [ext_resource type="Texture2D" uid="uid://b7dod2rsefgkn" path="res://Assets/Graphics/fridge-top-open.png" id="2_7pkv6"]
 [ext_resource type="Texture2D" uid="uid://8vqujxtj8gtu" path="res://Assets/Graphics/fridge-bottom-open.png" id="3_gt6pj"]
 [ext_resource type="Theme" uid="uid://boxo2g77bue4s" path="res://Assets/Theme.tres" id="4_gt6pj"]
+[ext_resource type="Texture2D" uid="uid://vdaflb5fkryk" path="res://Assets/Graphics/stickbug.jpg" id="4_n7tsu"]
 [ext_resource type="Script" uid="uid://bey87vkmaonn" path="res://Source/BloodBag.cs" id="6_6v336"]
 [ext_resource type="Texture2D" uid="uid://dvmeqqbym2n7x" path="res://Assets/Graphics/bloodbag.PNG" id="6_herea"]
+[ext_resource type="Theme" uid="uid://ccfxwsuflowa" path="res://Assets/Styles/Theme.tres" id="9_34tbr"]
 
 [node name="Fridge" type="Node2D"]
 script = ExtResource("1_7pkv6")
@@ -22,6 +24,11 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_7pkv6")
 centered = false
 
+[node name="StickBugSprite" type="Sprite2D" parent="FridgeTopOpenSprite"]
+position = Vector2(1681.67, 443.333)
+scale = Vector2(0.203704, 0.203704)
+texture = ExtResource("4_n7tsu")
+
 [node name="FridgeTopOpenButton" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +39,8 @@ offset_right = 1128.0
 offset_bottom = 387.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_gt6pj")
+theme = ExtResource("9_34tbr")
+theme_type_variation = &"ButtonFlatCorners"
 
 [node name="FridgeBottomOpenSprite" type="Sprite2D" parent="."]
 visible = false
@@ -59,7 +67,8 @@ offset_left = 883.0
 offset_top = 394.0
 offset_right = 1126.0
 offset_bottom = 625.0
-theme = ExtResource("4_gt6pj")
+theme = ExtResource("9_34tbr")
+theme_type_variation = &"ButtonFlatCorners"
 
 [node name="FridgeBottomCloseButton" type="Button" parent="."]
 visible = false
@@ -69,7 +78,8 @@ offset_right = 900.0
 offset_bottom = 627.0
 rotation = -0.0804031
 theme = ExtResource("4_gt6pj")
+theme_type_variation = &"ButtonFlatCorners"
 
 [connection signal="pressed" from="FridgeTopOpenButton" to="." method="FridgeTopPressed"]
 [connection signal="gui_input" from="FridgeBottomOpenSprite/BloodBag" to="FridgeBottomOpenSprite/BloodBag" method="OnInput"]
-[connection signal="pressed" from="FridgeBottomOpenButton" to="." method="FridgeBottomOpened"]
+[connection signal="pressed" from="FridgeBottomOpenButton" to="." method="FridgeBottomPressed"]

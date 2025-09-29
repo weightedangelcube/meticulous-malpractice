@@ -16,7 +16,9 @@ centered = false
 [node name="Terminal" parent="." instance=ExtResource("1_g03re")]
 
 [node name="Handbook" parent="." instance=ExtResource("4_b0tb4")]
-offset_left = 811.0
-offset_top = 196.0
-offset_right = 1190.0
-offset_bottom = 630.0
+offset_left = 750.0
+offset_top = 189.0
+offset_right = 1129.0
+offset_bottom = 623.0
+
+[connection signal="gui_input" from="Handbook" to="." method="onInput"]

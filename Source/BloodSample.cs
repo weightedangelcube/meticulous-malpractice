@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Godot;
 
 namespace daydream;
 
@@ -27,11 +29,17 @@ public class BloodSample {
     }
     
     private string GetCellSequence() {
-        
         var sequence = "";
+
+        char[] letters = ['A', 'T', 'C', 'G'];
+        var initialSequence = "";
+        for (int i = 0; i < 10; i++) {
+            var randomIndex = new Random().Next(0, 4);
+            initialSequence += letters[randomIndex];
+        }
         
         if (infected) {
-            foreach (var letter in "ATGCAATCATCGA") {
+            foreach (var letter in initialSequence) {
                 switch (letter) {
                     case 'A' when new Random().Next(4) >= 1:
                         sequence += 'S'; // 75% chance A becomes S
@@ -45,7 +53,7 @@ public class BloodSample {
                 }
             }
         } else {
-            foreach (var letter in "ATGCAATCATCGA") {
+            foreach (var letter in initialSequence) {
                 switch (letter) {
                     case 'A' when new Random().Next(4) >= 3:
                         sequence += 'S'; // 25% chance A becomes S

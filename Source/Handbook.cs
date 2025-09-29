@@ -43,7 +43,6 @@ public partial class Handbook : Control {
 	];
 
 	private RichTextLabel handbookLabel;
-	private Control handbook;
 
 	public override void _Ready() {
 		handbookLabel = GetNode("HandbookLabel") as RichTextLabel;
@@ -67,15 +66,5 @@ public partial class Handbook : Control {
 		handbookLabel.ParseBbcode(pages[displayedIndex]);
 	}
 
-	private void OnInput(InputEvent e) {
-		if (e.GetType() != typeof(InputEventKey)) return;
-		switch ((e as InputEventKey).Keycode) {
-			case Key.Left:
-				OnBackwardPress();
-				break;
-			case Key.Right:
-				OnForwardPress();
-				break;
-		}
-	}
+
 }

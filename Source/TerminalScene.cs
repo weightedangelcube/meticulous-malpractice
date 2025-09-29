@@ -4,9 +4,11 @@ using daydream;
 
 public partial class TerminalScene : Node {
 	private Terminal _terminal;
+	private Control handbook;
+
 	public override void _Ready() {
 		_terminal = GetNode("Terminal") as Terminal;
-		// _terminal.Focus();
+		handbook = GetNode("Handbook") as Control;
 		InitGame();
 	}
 
@@ -24,4 +26,6 @@ public partial class TerminalScene : Node {
 		
 		// play intro audio
 	}
+
+
 }

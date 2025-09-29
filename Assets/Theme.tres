@@ -48,6 +48,7 @@ variation_opentype = {
 Button/styles/hover = SubResource("StyleBoxFlat_ygdo5")
 Button/styles/normal = ExtResource("2_ygdo5")
 Button/styles/pressed = SubResource("StyleBoxFlat_aflf5")
+ButtonFlatCorners/base_type = &"Button"
 Control/colors/background_color = Color(0, 0, 0, 0)
 Control/fonts/font = ExtResource("1_xcxgj")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_csnxt")
